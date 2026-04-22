@@ -6,10 +6,10 @@
 // Configuration - À MODIFIER avec votre URL Google Apps Script
 const CONFIG = {
   // Remplacez par l'URL de votre déploiement Google Apps Script
-  APPS_SCRIPT_URL: 'https://script.google.com/macros/s/AKfycbwJ_2fRd1jG6ZxcbVt8DwF4Rj8cs68jo3DaWct3gsk4WNeWQo9CNw3b7V7M447tiEmHIw/exec',
+  APPS_SCRIPT_URL: 'VOTRE_URL_GOOGLE_APPS_SCRIPT_ICI',
   
   // Données de démonstration (sera remplacé par les vraies données)
-  USE_DEMO_DATA: false
+  USE_DEMO_DATA: true
 };
 
 // État global de l'application
@@ -542,8 +542,18 @@ function showSuccess(message) {
 // Service Worker pour PWA
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
-    navigator.serviceWorker.register('service-worker.js')
-      .then(registration => console.log('Service Worker enregistré'))
-      .catch(err => console.log('Erreur Service Worker:', err));
+    navigator.serviceWorker.register('./service-worker.js')
+      .then(registration => {
+        console.log('✅ Service Worker enregistré avec succès:', registration.scope);
+        
+        // Vérifier les mises à jour
+        registration.addEventListener('updatefound', () => {
+          console.log('🔄 Nouvelle version du Service Worker détectée');
+        });
+      })
+      .catch(err => {
+        console.warn('⚠️ Échec enregistrement Service Worker:', err);
+        console.log('L\'application fonctionnera quand même, mais sans mode hors ligne');
+      });
   });
 }
