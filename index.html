@@ -26,6 +26,10 @@
       --success: #06ffa5;
       --warning: #ffbe0b;
       --danger: #ff006e;
+      
+      /* Polices avec fallbacks */
+      --font-display: 'Space Mono', 'Courier New', 'Consolas', monospace;
+      --font-body: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
     }
     
     * {
@@ -35,7 +39,7 @@
     }
     
     body {
-      font-family: 'Outfit', sans-serif;
+      font-family: var(--font-body);
       background: linear-gradient(135deg, var(--midnight) 0%, var(--deep-blue) 100%);
       color: var(--text-primary);
       min-height: 100vh;
@@ -90,7 +94,7 @@
     }
     
     h1 {
-      font-family: 'Space Mono', monospace;
+      font-family: var(--font-display);
       font-size: clamp(2rem, 5vw, 3.5rem);
       font-weight: 700;
       background: linear-gradient(135deg, var(--accent-cyan), var(--accent-pink));
@@ -161,7 +165,7 @@
     }
     
     .stat-value {
-      font-family: 'Space Mono', monospace;
+      font-family: var(--font-display);
       font-size: 2.5rem;
       font-weight: 700;
       background: linear-gradient(135deg, var(--accent-cyan), var(--accent-yellow));
@@ -200,7 +204,7 @@
       border: 1px solid rgba(255, 255, 255, 0.1);
       border-radius: 12px;
       color: var(--text-primary);
-      font-family: 'Outfit', sans-serif;
+      font-family: var(--font-body);
       font-size: 1rem;
       transition: all 0.3s ease;
     }
@@ -231,7 +235,7 @@
       border: 1px solid rgba(255, 255, 255, 0.1);
       border-radius: 12px;
       color: var(--text-primary);
-      font-family: 'Outfit', sans-serif;
+      font-family: var(--font-body);
       font-size: 1rem;
       cursor: pointer;
       transition: all 0.3s ease;
@@ -288,7 +292,7 @@
       color: var(--text-secondary);
       cursor: pointer;
       transition: all 0.3s ease;
-      font-family: 'Outfit', sans-serif;
+      font-family: var(--font-body);
       font-weight: 500;
     }
     
@@ -312,7 +316,7 @@
     }
     
     .month-title {
-      font-family: 'Space Mono', monospace;
+      font-family: var(--font-display);
       font-size: 1.8rem;
       margin-bottom: 1.5rem;
       color: var(--accent-cyan);
@@ -355,7 +359,7 @@
     }
     
     .day-date {
-      font-family: 'Space Mono', monospace;
+      font-family: var(--font-display);
       font-weight: 700;
       font-size: 1.1rem;
     }
@@ -595,7 +599,7 @@
       border: 1px solid rgba(255, 255, 255, 0.1);
       border-radius: 8px;
       color: var(--text-primary);
-      font-family: 'Outfit', sans-serif;
+      font-family: var(--font-body);
       font-size: 1rem;
       transition: all 0.3s ease;
     }

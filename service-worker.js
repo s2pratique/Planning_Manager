@@ -62,8 +62,19 @@ self.addEventListener('fetch', event => {
     return;
   }
   
-  // Ignorer les requêtes vers Google Apps Script
-  if (event.request.url.includes('script.google.com')) {
+  const url = new URL(event.request.url);
+  
+  // Ne PAS intercepter les requêtes vers :
+  // - Google Apps Script
+  // - Google Fonts
+  // - CDN externes
+  if (
+    url.hostname.includes('script.google.com') ||
+    url.hostname.includes('fonts.googleapis.com') ||
+    url.hostname.includes('fonts.gstatic.com') ||
+    url.hostname.includes('cdn')
+  ) {
+    // Laisser passer directement sans cache
     return;
   }
   
