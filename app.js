@@ -3,13 +3,13 @@
  * PWA pour la gestion du planning de formation 2026
  */
 
-// Configuration - À MODIFIER avec votre URL Google Apps Script
+// Configuration - Connecté à votre Google Sheets
 const CONFIG = {
-  // Remplacez par l'URL de votre déploiement Google Apps Script
-  APPS_SCRIPT_URL: 'VOTRE_URL_GOOGLE_APPS_SCRIPT_ICI',
+  // URL de votre déploiement Google Apps Script
+  APPS_SCRIPT_URL: 'https://script.google.com/macros/s/AKfycbyNzmVN-O9cMGnpbrXzxnXPFiOcY8lJ607IEwEMAnu8y5pBsbRNRg-HS6PbauzJRPwMBg/exec',
   
-  // Données de démonstration (sera remplacé par les vraies données)
-  USE_DEMO_DATA: true
+  // Mode démo désactivé - Utilisation des vraies données
+  USE_DEMO_DATA: false
 };
 
 // État global de l'application
